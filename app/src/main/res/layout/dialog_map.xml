@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:weightSum="5"
+    android:layout_height="500dp">
+
+    <!--location marker start-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="50dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:text="Some Tips" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+                android:background="@drawable/marker" />
+            <TextView
+                android:layout_width="200dp"
+                android:textAlignment="center"
+                android:text="Dragable Marker  toset directions "
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/imageView4"
+                android:layout_weight="1"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+
+                android:background="@drawable/to_destination" />
+            <TextView
+                android:layout_width="200dp"
+                android:textAlignment="center"
+                android:text=" set dirction to orginal locaton or use dragable marker for your custom location"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!--location marker end-->
+
+
+    <!---schools start-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@drawable/students" />
+        <TextView
+            android:layout_width="200dp"
+            android:textAlignment="center"
+            android:text="Nearby schools"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <!---schools end -->
+
+
+
+    <!--location marker start-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/ww"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+                android:background="@drawable/hospitals" />
+            <TextView
+                android:layout_width="200dp"
+                android:textAlignment="center"
+                android:text="Nearby Hosbitals "
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/imagessView4"
+                android:layout_weight="1"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+
+                android:background="@drawable/food" />
+            <TextView
+                android:layout_width="200dp"
+                android:textAlignment="center"
+                android:text="Nearby Resturants"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+<Button
+    android:layout_width="match_parent"
+    android:text="Dismiss"
+    android:id="@+id/dismiss"
+    android:layout_weight="1"
+
+    android:layout_height="0dp" />
+    <!--location marker end-->
+
+</LinearLayout>

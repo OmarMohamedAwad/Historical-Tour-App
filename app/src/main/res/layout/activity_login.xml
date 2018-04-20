@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+
+    android:layout_height="match_parent"
+    tools:context="com.example.micro.historicaltour.login_And_register.Login">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:id="@+id/view"
+
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
+                android:autoStart="true"
+                android:flipInterval="3000"
+                android:layout_height="350dp" >
+                <ImageView
+                    android:layout_width="400dp"
+                    android:layout_gravity="center"
+                    android:layout_height="400dp"
+                    android:src="@drawable/mosq"
+                    />
+                <ImageView
+                    android:layout_width="400dp"
+                    android:src="@drawable/mosq"
+                    android:layout_gravity="center"
+                    android:layout_height="400dp" />
+                <ImageView
+
+                    android:src="@drawable/mosq"
+                    android:layout_width="400dp"
+                    android:layout_gravity="center"
+                    android:layout_height="400dp" />
+                <ImageView
+                    android:layout_width="400dp"
+                    android:layout_gravity="center"
+                    android:layout_height="400dp"
+                    android:src="@drawable/mosq"
+                    />
+                <ImageView
+                    android:layout_width="400dp"
+                    android:layout_gravity="center"
+                    android:layout_height="400dp"
+                    android:src="@drawable/mosq"
+                    />
+
+            </ViewFlipper>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_weight="1"
+                    android:text="Tourist"
+                    android:background="@drawable/btnshape"
+                    android:textColor="#fff"
+                    android:layout_margin="5dp"
+                    android:layout_width="150dp"
+                    android:id="@+id/touristbtn"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:layout_weight="1"
+                    android:text="tour guide"
+                    android:background="@drawable/btnshape"
+                    android:layout_width="150dp"
+                    android:textColor="#fff"
+                    android:id="@+id/guidebtn"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <EditText
+                android:layout_width="350dp"
+                android:hint=" UserName"
+                android:id="@+id/userlog"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/pharoh"
+
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                app:passwordToggleEnabled="true"
+
+                app:passwordToggleTint="#000"
+                app:passwordToggleDrawable="@drawable/icon_selector"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="350dp"
+                    android:drawableStart="@drawable/pharaohpass"
+                    android:textCursorDrawable="@null"
+                    android:hint="  Password"
+                    android:imeOptions="actionNext"
+                    android:id="@+id/passlog"
+                    android:inputType="textPassword"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/pharaohpass" />
+
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:layout_width="150dp"
+                android:text="Login"
+                android:textColor="#fff"
+                android:id="@+id/login"
+                android:background="@drawable/btnshape2"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

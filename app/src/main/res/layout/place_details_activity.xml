@@ -1,0 +1,79 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/apppar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/id_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+
+
+            android:background="#fff"
+            app:layout_scrollFlags="scroll|snap">
+
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:id="@+id/view"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
+                android:autoStart="true"
+android:layout_marginRight="15dp"
+android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:flipInterval="3000"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+
+                    android:scaleType="fitXY"
+
+                    android:src="@drawable/abo" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/church"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/imagestyle"
+                    android:layout_height="200dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/mosq"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/imagestyle"
+                    android:layout_height="200dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/mus"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/imagestyle"
+                    android:layout_height="200dp" />
+
+            </ViewFlipper>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout_id"
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:layout_height="?attr/actionBarSize"
+      />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>
