@@ -1,18 +1,17 @@
 package com.example.micro.historicaltour;
 
-import android.graphics.Color;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.micro.historicaltour.fragment.PlaceVideoFragment;
-import com.example.micro.historicaltour.fragment.ViewPagerAdapter;
-import com.example.micro.historicaltour.fragment.available_time_fragment;
-import com.example.micro.historicaltour.fragment.info_fragment;
-import com.example.micro.historicaltour.fragment.location_fragment;
-import com.example.micro.historicaltour.fragment.rating_fragment;
+import com.example.micro.historicaltour.Places_Details_Fragment.PlaceVideoFragment;
+import com.example.micro.historicaltour.Places_Details_Fragment.ViewPagerAdapter;
+import com.example.micro.historicaltour.Places_Details_Fragment.available_time_fragment;
+import com.example.micro.historicaltour.Places_Details_Fragment.info_fragment;
+import com.example.micro.historicaltour.Places_Details_Fragment.location_fragment;
+import com.example.micro.historicaltour.Places_Details_Fragment.rating_fragment;
 
 public class PlaceDetailsActivity extends AppCompatActivity {
     private TabLayout tabLayout;

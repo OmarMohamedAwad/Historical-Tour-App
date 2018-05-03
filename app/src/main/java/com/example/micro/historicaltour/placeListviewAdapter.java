@@ -1,6 +1,8 @@
 package com.example.micro.historicaltour;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.micro.historicaltour.Classes.classes.placeClass;
+
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
 /**
@@ -61,7 +66,14 @@ public class placeListviewAdapter extends ArrayAdapter {
         viewholder.name.setText((String.valueOf(currentPlace.getName())));
         viewholder.location.setText((String.valueOf(currentPlace.getLocation())));
         viewholder.description.setText((String.valueOf(currentPlace.getDescrption())));
-        viewholder.image.setImageResource(currentPlace.getImageId());
+
+        // display the first image of the place from db
+        byte[] imageArray =currentPlace.getImages().get(0);
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(imageArray);
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+
+
+        viewholder.image.setImageBitmap(bitmap);
 
 
         return view;

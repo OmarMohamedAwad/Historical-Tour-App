@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.micro.historicaltour.Classes.classes.tourguideClass;
 import com.example.micro.historicaltour.R;
 
 import java.util.ArrayList;
@@ -19,9 +20,9 @@ import java.util.ArrayList;
 
 public class tourGuidesListviewAdapter extends ArrayAdapter {
 
-    ArrayList<tourClass> tourGuides;
+    ArrayList<tourguideClass> tourGuides;
 
-    public tourGuidesListviewAdapter(@NonNull Context context, ArrayList<tourClass> tourGuides) {
+    public tourGuidesListviewAdapter(@NonNull Context context, ArrayList<tourguideClass> tourGuides) {
         super(context, 0);
         this.tourGuides = tourGuides;
     }
@@ -38,14 +39,14 @@ public class tourGuidesListviewAdapter extends ArrayAdapter {
 
     @Override
     public long getItemId(int i) {
-        return tourGuides.get(i).getId();
+        return tourGuides.get(i).getID();
     }
 
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        tourClass currentPlace = tourGuides.get(i);
+        tourguideClass currentPlace = tourGuides.get(i);
 
         tourViewholder viewholder ;
 
@@ -64,7 +65,7 @@ public class tourGuidesListviewAdapter extends ArrayAdapter {
         viewholder.name.setText((String.valueOf(currentPlace.getName())));
         viewholder.address.setText((String.valueOf(currentPlace.getAddress())));
         viewholder.email.setText((String.valueOf(currentPlace.getEmail())));
-        viewholder.image.setImageResource(currentPlace.getImageId());
+        //viewholder.image.setImageResource(currentPlace.getImageId());
 
 
         return view;
@@ -76,7 +77,7 @@ public class tourGuidesListviewAdapter extends ArrayAdapter {
         TextView name;
         TextView address;
         TextView email;
-        ImageView image;
+        //ImageView image;
 
         public tourViewholder(View view){
 
@@ -84,7 +85,7 @@ public class tourGuidesListviewAdapter extends ArrayAdapter {
             name = (TextView) view.findViewById(R.id.name_textView);
             address = (TextView) view.findViewById(R.id.address_textView);
             email = (TextView) view.findViewById(R.id.description_textView);
-            image =  view.findViewById(R.id.tourGuide_Imageview);
+            //image =  view.findViewById(R.id.tourGuide_Imageview);
 
         }
 

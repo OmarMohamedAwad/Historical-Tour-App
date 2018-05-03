@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:weightSum="5"
-    android:layout_height="500dp">
+    android:layout_height="500dp"
+    android:orientation="vertical"
+    android:weightSum="5">
 
     <!--location marker start-->
     <TextView
@@ -13,64 +12,69 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textSize="50dp"
-        android:textColor="@color/colorPrimary"
+        android:text="Some Tips"
+        android:paddingTop="15dp"
         android:textAlignment="center"
-        android:text="Some Tips" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:weightSum="2"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_height="0dp">
+        android:weightSum="2">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:orientation="vertical">
 
-            android:layout_height="wrap_content">
             <Button
                 android:id="@+id/imageView2"
                 android:layout_width="50dp"
-
                 android:layout_height="50dp"
                 android:background="@drawable/marker" />
+
             <TextView
                 android:layout_width="200dp"
-                android:textAlignment="center"
-                android:text="Dragable Marker  toset directions "
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Set Your Directions "
+                android:layout_marginTop="10dp"
+                android:textAlignment="center" />
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
 
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
 
 
             <Button
                 android:id="@+id/imageView4"
-                android:layout_weight="1"
                 android:layout_width="50dp"
-
                 android:layout_height="50dp"
 
+                android:layout_weight="1"
+
                 android:background="@drawable/to_destination" />
+
             <TextView
                 android:layout_width="200dp"
-                android:textAlignment="center"
-                android:text=" set dirction to orginal locaton or use dragable marker for your custom location"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text=" Set Marker in your Location"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>
@@ -81,89 +85,95 @@
     <!---schools start-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_height="0dp">
+        android:orientation="vertical">
+
         <Button
             android:id="@+id/imageView6"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:background="@drawable/students" />
+
         <TextView
             android:layout_width="200dp"
-            android:textAlignment="center"
+            android:layout_height="wrap_content"
             android:text="Nearby schools"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="10dp"
+            android:textAlignment="center" />
     </LinearLayout>
     <!---schools end -->
-
 
 
     <!--location marker start-->
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:weightSum="2"
         android:orientation="horizontal"
-        android:layout_height="0dp">
+        android:weightSum="2">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
 
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/ww"
                 android:layout_width="50dp"
-
                 android:layout_height="50dp"
                 android:background="@drawable/hospitals" />
+
             <TextView
                 android:layout_width="200dp"
-                android:textAlignment="center"
+                android:layout_height="wrap_content"
                 android:text="Nearby Hosbitals "
-                android:layout_height="wrap_content" />
+                android:layout_marginTop="10dp"
+                android:textAlignment="center" />
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
 
 
             <Button
                 android:id="@+id/imagessView4"
-                android:layout_weight="1"
                 android:layout_width="50dp"
-
                 android:layout_height="50dp"
-
+                android:layout_weight="1"
                 android:background="@drawable/food" />
+
             <TextView
                 android:layout_width="200dp"
-                android:textAlignment="center"
+                android:layout_height="wrap_content"
                 android:text="Nearby Resturants"
-                android:layout_height="wrap_content" />
+                android:layout_marginTop="10dp"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
 
-
     </LinearLayout>
-<Button
-    android:layout_width="match_parent"
-    android:text="Dismiss"
-    android:id="@+id/dismiss"
-    android:layout_weight="1"
 
-    android:layout_height="0dp" />
+    <Button
+        android:id="@+id/dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:text="Dismiss"
+        android:layout_margin="10dp"
+        android:background="@drawable/dark_border"/>
     <!--location marker end-->
 
 </LinearLayout>

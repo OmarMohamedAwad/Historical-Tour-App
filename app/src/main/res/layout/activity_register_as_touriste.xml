@@ -6,171 +6,221 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.micro.historicaltour.login_And_register.Register_As_Touriste">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:padding="20dp">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:src="@drawable/pharohga"
-                    />
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/man" />
+
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_height="wrap_content"
                     android:id="@+id/firstnametext"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/user_male"
+                    android:drawablePadding="20dp"
                     android:hint="First Nmae"
-                    />
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+
                 <EditText
+                    android:id="@+id/usernametext"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:id="@+id/lastnametext"
-                    android:hint="Last Name"
-                    />
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/user_male"
+                    android:drawablePadding="20dp"
+                    android:hint="User Name"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:id="@+id/mail"
-                    android:inputType="textEmailAddress"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/opened_email"
+                    android:drawablePadding="20dp"
                     android:hint="example@mail.com"
-                    />
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:id="@+id/phonetext"
-                    android:inputType="number"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/smartphone_call"
+                    android:drawablePadding="20dp"
                     android:hint="02001099441240"
-                    />
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+
+                <MultiAutoCompleteTextView
+                    android:id="@+id/skills"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/earth_language"
+                    android:drawablePadding="20dp"
+                    android:ems="14"
+                    android:hint="EnteryourLangauges"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp">
+
+                    <requestFocus />
+                </MultiAutoCompleteTextView>
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    app:passwordToggleEnabled="true"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    app:passwordToggleTint="@color/colorPrimaryDark"
                     app:passwordToggleDrawable="@drawable/icon_selector"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorPrimaryDark">
 
+                    <EditText
                         android:id="@+id/password"
-                        android:inputType="textPassword"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edittext_border"
+                        android:drawablePadding="20dp"
+                        android:drawableStart="@drawable/padlock"
                         android:hint="Password"
-                        />
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp" />
+
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    app:passwordToggleEnabled="true"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    app:passwordToggleTint="@color/colorPrimaryDark"
                     app:passwordToggleDrawable="@drawable/icon_selector"
-                    android:layout_height="wrap_content">
-                    <android.support.design.widget.TextInputEditText
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorPrimaryDark">
+
+                    <EditText
                         android:layout_width="match_parent"
-
-
-                        android:inputType="textPassword"
-                        android:layout_height="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edittext_border"
+                        android:drawablePadding="20dp"
+                        android:drawableStart="@drawable/padlock"
                         android:hint="repeatThepassword"
-                        />
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp" />
+
                 </android.support.design.widget.TextInputLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="Female" />
+                </LinearLayout>
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:weightSum="2"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
 
             </LinearLayout>
+
             <Button
+                android:id="@+id/registerconfirm"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:layout_gravity="center"
-                android:textColor="#ffff"
-                android:id="@+id/registerconfirm"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/btnshape2"
                 android:text="confirm"
+                android:textColor="#ffff"
 
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OR"
-                android:layout_marginTop="5dp"
-                android:textSize="30dp"
                 android:layout_gravity="center"
-                />
+                android:layout_marginTop="5dp"
+                android:text="Or Sign Up Using"
+                android:textSize="22dp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:weightSum="2"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="3dp"
-                    android:text="f"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:fontFamily="Klavika"
-                    android:textColor="#fff"
-                    android:textSize="30dp"
-                    android:background="@drawable/facebook"
-                    android:layout_gravity="bottom"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                    />
-                <TextView
-
-                    android:layout_width="50dp"
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_gravity="bottom"
                     android:layout_margin="3dp"
-                    android:textSize="30dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:text="g+"
-                    android:fontFamily="sans-serif"
+                    android:src="@drawable/facebook" />
 
-                    android:background="@drawable/google"
-                    android:layout_height="50dp" />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="3dp"
+                    android:src="@drawable/google_plus" />
 
 
             </LinearLayout>
-        </LinearLayout></ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

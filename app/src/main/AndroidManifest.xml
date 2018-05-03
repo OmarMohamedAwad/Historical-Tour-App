@@ -3,7 +3,7 @@
     package="com.example.micro.historicaltour">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,7 +21,8 @@
         android:label="Historcal Tour"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
         <activity android:name=".splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,16 +32,16 @@
         </activity>
         <activity android:name=".PlaceDetailsActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".PlacesGroupActivity" />
-        <activity android:name=".Places" />
+        <activity android:name=".PlacesListActivity" />
+        <activity android:name=".governoratesActivity" />
 
         <activity android:name=".login_And_register.Login" />
         <activity android:name=".login_And_register.Register_As_Touriste" />
         <activity android:name=".login_And_register.Register_As_Guide" />
         <activity android:name=".ToueGuides.TourGuidesActivity" />
         <activity android:name=".testbars" />
-        <activity android:name=".hotels.HotelsList" />
-
+        <activity android:name=".hotels.HotelsListActivity" />
+        <activity android:name=".hotels.Hotels_details_activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:weightSum="8"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    >
-<ImageView
-    android:layout_width="match_parent"
-    android:src="@drawable/map"
-    android:scaleType="fitXY"
-    android:layout_weight="7"
-    android:layout_height="0dp" />
-    <Button
+    android:orientation="vertical"
+    android:weightSum="8">
+
+    <ImageView
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:scaleType="fitXY"
+        android:src="@drawable/map" />
+
+    <Button
+        android:id="@+id/go"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/btnshape"
+        android:shadowColor="#ff9d00"
         android:text="go"
         android:textColor="#fff"
-        android:textStyle="bold"
         android:textSize="30dp"
-        android:layout_margin="5dp"
-        android:id="@+id/go"
-        android:shadowColor="#ff9d00"
-        android:background="@drawable/btnshape"
-        android:layout_weight="1"
-        android:layout_height="0dp" />
+        android:textStyle="bold" />
 </LinearLayout>

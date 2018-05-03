@@ -7,7 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import com.example.micro.historicaltour.ToueGuides.TourGuidesActivity;
-import com.example.micro.historicaltour.hotels.HotelsList;
+import com.example.micro.historicaltour.hotels.HotelsListActivity;
 
 public class HomeActivity extends AppCompatActivity {
     CardView places_card;
@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            Intent intent = new Intent(HomeActivity.this, Places.class);
+            Intent intent = new Intent(HomeActivity.this, governoratesActivity.class);
             startActivity(intent);
         }
     };
@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         my_hotel_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, HotelsList.class);
+                Intent i = new Intent(HomeActivity.this, HotelsListActivity.class);
                startActivity(i);
             }
         });
@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         places_card_imageview.setOnClickListener(places_click);
 
 
-        //tour guides
+        //tourClass guides
 
         ///this code for handling moving to other activities
         View.OnClickListener tourguide_click = new View.OnClickListener() {

@@ -24,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/tourGuide_Imageview"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/rate_textView"
                 android:padding="10dp"
@@ -101,7 +101,5 @@
 
 
     </LinearLayout>
-
-
 
 </LinearLayout>

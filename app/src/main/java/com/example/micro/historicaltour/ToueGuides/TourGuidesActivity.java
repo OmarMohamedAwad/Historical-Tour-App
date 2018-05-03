@@ -7,9 +7,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.micro.historicaltour.Classes.classes.UserClass;
+import com.example.micro.historicaltour.Classes.classes.hotelClass;
+import com.example.micro.historicaltour.Classes.classes.tourguideClass;
 import com.example.micro.historicaltour.R;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TourGuidesActivity extends AppCompatActivity {
 
@@ -18,18 +22,26 @@ public class TourGuidesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tourguides);
 
-        ArrayList<tourClass> tourGuides = new ArrayList<>();
+        tourguideClass tourguidedata;
+        final ArrayList<tourguideClass> tours = new ArrayList<tourguideClass>();
 
-        tourGuides.add(new tourClass(1,"Ahmed Fetoh",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"Mohmed Mahkloof",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser engar",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"Omar awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
-        tourGuides.add(new tourClass(1,"yasser awad",4.5,"yasser.ali@tour.com",R.drawable.tourguide,"Mansoura"));
+        Date date = new Date();
+
+        ArrayList<String> language = new ArrayList<String>();
+        language.add("Arabic");
+        language.add("English");
+
+        final ArrayList<tourguideClass> tourGuides = new ArrayList<>();
+
+        tourGuides.add(new tourguideClass(1,"Ahmed Fetoh","AhmedFottoh","12345","AhmedFottoh.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(2,"Omar Awad","omarawad","12345","omarawad.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(3,"yasser elngare","yasser","12345","yasser.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(4,"mohammed mahklof","mahklof","12345","mahklof.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(5,"Omar Awad","AhmedFottoh","12345","AhmedFottoh.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(6,"Ahmed Fetoh","AhmedFottoh","12345","yasser.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(7,"Omar Awad","AhmedFottoh","12345","AhmedFottoh.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+        tourGuides.add(new tourguideClass(8,"mohammed mahklof","mohammed mahklof","12345","mahklof.ali@tourClass.com",date,"cairo",1,4,(double)4.2,"Mansoura Univarsity","01010986531",language));
+
 
         ListView listView = findViewById(R.id.tourGuidesListview);
 
@@ -43,6 +55,7 @@ public class TourGuidesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Intent intent = new Intent(TourGuidesActivity.this,TourGuideDetalisActivity.class);
+                intent.putExtra("tourGuides",tourGuides.get(i));
                 startActivity(intent);
             }
         });

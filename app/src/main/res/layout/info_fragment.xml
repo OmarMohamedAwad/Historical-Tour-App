@@ -7,39 +7,41 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
 
 
         android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:text="Abu Simbel temples"
-    android:textColor="@color/colorPrimary"
-    android:shadowColor="@color/colorPrimaryDark"
-    android:shadowDx="0.0"
-    android:shadowDy="0.0"
-    android:shadowRadius="2.0"
 
-    android:textStyle="bold"
-    android:textSize="30dp"
+        <TextView
+            android:id="@+id/placeNameTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="2.0"
+            android:text="Abu Simbel temples"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    android:layout_marginTop="20dp"
-    android:layout_marginLeft="10dp"
-    android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="match_parent"
-        android:text="@string/pargraph"
-        android:padding="10dp"
-        android:textStyle="bold"
 
-        android:shadowColor="#fff"
-        android:shadowDx="0.0"
-        android:shadowDy="0.0"
-        android:shadowRadius="2.0"
-        android:textSize="20dp"
-        android:textColor="#000"
-
-        android:layout_height="match_parent" /></LinearLayout></ScrollView>
+        <TextView
+            android:id="@+id/placeDescriptionTextview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:shadowColor="#fff"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
+            android:shadowRadius="2.0"
+            android:text="@string/pargraph"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold" /></LinearLayout></ScrollView>
 </LinearLayout>

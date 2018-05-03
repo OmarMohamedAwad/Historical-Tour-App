@@ -56,6 +56,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double end_latitude, end_longitude;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -261,7 +263,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private String getUrl(double latitude, double longitude, String nearbyPlace)
     {
-        StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/placeClass/nearbysearch/json?");
         googlePlacesUrl.append("location=" + latitude + "," + longitude);
         googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
         googlePlacesUrl.append("&type=" + nearbyPlace);

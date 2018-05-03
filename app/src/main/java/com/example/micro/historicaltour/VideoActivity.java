@@ -1,5 +1,6 @@
 package com.example.micro.historicaltour;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,8 @@ public class VideoActivity extends YouTubeBaseActivity {
 
     ImageView youtubeplayer_btn;
 
+    String videoKey;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,10 @@ public class VideoActivity extends YouTubeBaseActivity {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
-                youTubePlayer.loadVideo("3LiubyYpEUk");
+                Intent intent =getIntent();
+                videoKey= intent.getStringExtra("key");
+
+                youTubePlayer.loadVideo(videoKey);
             }
 
             @Override

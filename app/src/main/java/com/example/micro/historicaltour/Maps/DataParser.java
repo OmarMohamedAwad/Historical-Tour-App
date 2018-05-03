@@ -76,7 +76,7 @@ public class DataParser {
             googlePlacesMap.put("reference" , reference);
 
 
-            Log.d("getPlace", "Putting Places");
+            Log.d("getPlace", "Putting governoratesActivity");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -92,7 +92,7 @@ public class DataParser {
         int count = jsonArray.length();
         List<HashMap<String,String>> placesList = new ArrayList<>();
         HashMap<String,String> placeMap = null;
-        Log.d("Places", "getPlaces");
+        Log.d("governoratesActivity", "getPlaceClasses");
 
         for(int i = 0;i<count;i++)
         {
@@ -114,7 +114,7 @@ public class DataParser {
         JSONObject jsonObject;
 
         try {
-            Log.d("Places", "parse");
+            Log.d("governoratesActivity", "parse");
 
             jsonObject = new JSONObject(jsonData);
             jsonArray = jsonObject.getJSONArray("results");

@@ -3,135 +3,138 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
-
     android:layout_height="match_parent"
     tools:context="com.example.micro.historicaltour.login_And_register.Login">
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ViewFlipper
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:textColor="#fff"
-                android:id="@+id/view"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-                android:inAnimation="@android:anim/slide_in_left"
-                android:outAnimation="@android:anim/slide_out_right"
-                android:autoStart="true"
-                android:flipInterval="3000"
-                android:layout_height="350dp" >
                 <ImageView
-                    android:layout_width="400dp"
-                    android:layout_gravity="center"
-                    android:layout_height="400dp"
-                    android:src="@drawable/mosq"
-                    />
-                <ImageView
-                    android:layout_width="400dp"
-                    android:src="@drawable/mosq"
-                    android:layout_gravity="center"
-                    android:layout_height="400dp" />
-                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/iconlogo" />
 
-                    android:src="@drawable/mosq"
-                    android:layout_width="400dp"
-                    android:layout_gravity="center"
-                    android:layout_height="400dp" />
-                <ImageView
-                    android:layout_width="400dp"
-                    android:layout_gravity="center"
-                    android:layout_height="400dp"
-                    android:src="@drawable/mosq"
-                    />
-                <ImageView
-                    android:layout_width="400dp"
-                    android:layout_gravity="center"
-                    android:layout_height="400dp"
-                    android:src="@drawable/mosq"
-                    />
 
-            </ViewFlipper>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:orientation="horizontal"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:layout_height="wrap_content">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
                 <Button
-                    android:layout_weight="1"
-                    android:text="Tourist"
-                    android:background="@drawable/btnshape"
-                    android:textColor="#fff"
-                    android:layout_margin="5dp"
-                    android:layout_width="150dp"
                     android:id="@+id/touristbtn"
-                    android:layout_height="wrap_content" />
-                <Button
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:text="tour guide"
-                    android:background="@drawable/btnshape"
-                    android:layout_width="150dp"
-                    android:textColor="#fff"
+                    android:background="@drawable/btnshape2"
+                    android:text="Tourist"
+                    android:textColor="#fff" />
+
+                <Button
                     android:id="@+id/guidebtn"
-                    android:layout_margin="5dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnshape2"
+                    android:text="tour guide"
+                    android:textColor="#fff" />
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:orientation="vertical"
-            android:layout_height="match_parent">
-            <EditText
-                android:layout_width="350dp"
-                android:hint=" UserName"
-                android:id="@+id/userlog"
-                android:inputType="textEmailAddress"
-                android:drawableLeft="@drawable/pharoh"
+            >
 
-                android:layout_height="wrap_content" />
             <android.support.design.widget.TextInputLayout
-                android:layout_width="wrap_content"
-                app:passwordToggleEnabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp"
+                >
 
-                app:passwordToggleTint="#000"
-                app:passwordToggleDrawable="@drawable/icon_selector"
-                android:layout_height="wrap_content">
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="350dp"
-                    android:drawableStart="@drawable/pharaohpass"
-                    android:textCursorDrawable="@null"
-                    android:hint="  Password"
-                    android:imeOptions="actionNext"
-                    android:id="@+id/passlog"
-                    android:inputType="textPassword"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/pharaohpass" />
+            <EditText
+                android:id="@+id/user_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="UserName"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edittext_border"
+                android:drawableLeft="@drawable/pharoh"
+                android:drawablePadding="20dp"/>
 
             </android.support.design.widget.TextInputLayout>
-            <Button
-                android:layout_width="150dp"
-                android:text="Login"
-                android:textColor="#fff"
-                android:id="@+id/login"
-                android:background="@drawable/btnshape2"
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp"
+                app:passwordToggleDrawable="@drawable/icon_selector"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#000">
+
+                <EditText
+                    android:id="@+id/password_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:maxLines="1"
+                    android:background="@drawable/edittext_border"
+                    android:drawableLeft="@drawable/pharaohpass"
+                    android:drawableStart="@drawable/pharaohpass"
+                    android:hint="  Password"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:textCursorDrawable="@null"
+                    android:drawablePadding="20dp"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btnshape2"
+                android:text="Login"
+                android:textColor="#fff" />
 
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </ScrollView>
