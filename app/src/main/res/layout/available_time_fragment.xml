@@ -28,7 +28,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  9am to 6pm"
+                android:text="Day off"
                 android:textAlignment="center" />
 
 
@@ -51,7 +51,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  10am to 6pm" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>
@@ -74,7 +74,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  9am to 6pm" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>
@@ -97,7 +97,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  9am to 6pm" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>
@@ -119,7 +119,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  9am to 6pm" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>
@@ -142,7 +142,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" From  9am to 6pm" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>
@@ -165,7 +165,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Holiday" />
+                android:text="Day off" />
 
 
         </android.support.design.widget.TabLayout>

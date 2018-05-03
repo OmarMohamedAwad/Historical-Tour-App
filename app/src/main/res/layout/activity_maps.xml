@@ -5,14 +5,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
         android:layout_width="match_parent"
-
+        android:weightSum="4"
         android:layout_below="@+id/editText"
         android:layout_height="40dp"
         android:id="@+id/linearLayout">
 
         <Button
             android:id="@+id/b_hospital"
-            android:layout_width="100dp"
+            android:layout_width="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
             android:layout_height="40dp"
             android:onClick="Search"
             android:background="@drawable/hospitals"
@@ -20,28 +22,33 @@
 
         <Button
             android:id="@+id/b_resturants"
-            android:layout_width="100dp"
+            android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
             android:onClick="Search"
             android:background="@drawable/food"
             />
 
         <Button
             android:id="@+id/b_school"
-            android:layout_width="100dp"
+            android:layout_width="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_height="40dp"
             android:onClick="Search"
+            android:layout_weight="1"
             android:background="@drawable/students"
-             />
+            />
 
         <Button
             android:id="@+id/b_to"
-            android:background="@drawable/to_destination"
-            android:layout_width="70dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:onClick="Search"
-             />
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/to_destination"
+            android:onClick="Search" />
     </LinearLayout>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,10 +66,12 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="340dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
-
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
 
@@ -73,12 +82,12 @@
 
     <Button
         android:id="@+id/search"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
 
-        android:layout_toEndOf="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignTop="@+id/editText"
         android:background="@drawable/ic_search_black_24dp"
         android:onClick="Search"
         android:text="" />

@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * Created by micro on 21/03/2018.
  */
 
-public class available_time_fragment  extends android.support.v4.app.Fragment {
+public class available_time_fragment extends android.support.v4.app.Fragment {
     View view;
     placeClass place ;
 
@@ -63,7 +63,7 @@ public class available_time_fragment  extends android.support.v4.app.Fragment {
 
         ArrayList<timeClass> days =place.getWorkingDays();
 
-        for(int i=0;i<7;i++){
+        for(int i=0;i<days.size();i++){
             if(days.get(i)!=null){
                 textViews.get(i).getTabAt(1).setText(String.valueOf(days.get(i).getStartTime())+" : "+String.valueOf(days.get(i).getEndTime()));
             }

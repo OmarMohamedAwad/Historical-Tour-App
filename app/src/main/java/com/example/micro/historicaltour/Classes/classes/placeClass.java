@@ -2,10 +2,8 @@ package com.example.micro.historicaltour.Classes.classes;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.IntRange;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by UNKNOWN on 3/21/2018.
@@ -28,8 +26,36 @@ public class placeClass implements Parcelable{
 
     public placeClass() {
 
+    }
+
+    public placeClass(int id, String name, double rate, String videoKey, String descrption, String location, float longitude, float latitude, ArrayList<timeClass> WorkingDays, ArrayList<reviewClass> reviewClasses, ArrayList<byte[]> Images) {
+        Id = id;
+        Name = name;
+        Rate = rate;
+        VideoKey = videoKey;
+        Descrption = descrption;
+        Location = location;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.WorkingDays=WorkingDays;
+        this.reviewClasses=reviewClasses;
+        this.Images=Images;
+    }
+
+
+    public placeClass(int id, String name, double rate, String videoKey, String descrption, String location, float longitude, float latitude) {
+        Id = id;
+        Name = name;
+        Rate = rate;
+        VideoKey = videoKey;
+        Descrption = descrption;
+        Location = location;
+        this.longitude = longitude;
+        this.latitude = latitude;
 
     }
+
+
 
     public placeClass(int id, String name, double rate, String videoKey, ArrayList<byte[]> images, String descrption, String location) {
         Id = id;

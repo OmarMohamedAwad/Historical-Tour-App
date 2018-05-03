@@ -1,4 +1,4 @@
-package com.example.micro.historicaltour.hotels;
+package com.example.micro.historicaltour.MyTour;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,14 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.micro.historicaltour.Classes.classes.hotelClass;
-import com.example.micro.historicaltour.MyTour.SelectedHotelsListActivity;
-import com.example.micro.historicaltour.PlaceDetailsActivity;
-import com.example.micro.historicaltour.PlacesListActivity;
 import com.example.micro.historicaltour.R;
 
 import java.util.ArrayList;
@@ -22,11 +18,11 @@ import java.util.ArrayList;
  * Created by micro on 15/04/2018.
  */
 
-public class hotelListviewAdapter extends ArrayAdapter<hotelClass> {
+public class selected_hotelListviewAdapter extends ArrayAdapter<hotelClass> {
     private int backgrouncolor;
 
 
-    public hotelListviewAdapter(Context context, ArrayList<hotelClass> hotels) {
+    public selected_hotelListviewAdapter(Context context, ArrayList<hotelClass> hotels) {
         super(context, 0, hotels);
 
     }
@@ -37,7 +33,7 @@ public class hotelListviewAdapter extends ArrayAdapter<hotelClass> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.hotel_special_layout, parent, false);
+                    R.layout.selcted_hotel_list_special, parent, false);
         }
         final hotelClass currenthotel = getItem(position);
         TextView name = (TextView) listItemView.findViewById(R.id.name_hotels_textView);

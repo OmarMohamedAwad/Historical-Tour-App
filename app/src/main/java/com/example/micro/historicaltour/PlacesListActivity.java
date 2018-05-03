@@ -1,8 +1,12 @@
 package com.example.micro.historicaltour;
 
+import android.app.LoaderManager;
 import android.content.Intent;
+import android.content.Loader;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -10,23 +14,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import java.util.Date;
 
-import com.example.micro.historicaltour.Classes.classes.UserClass;
 import com.example.micro.historicaltour.Classes.classes.governorateClass;
 import com.example.micro.historicaltour.Classes.classes.placeClass;
-import com.example.micro.historicaltour.Classes.classes.reviewClass;
-import com.example.micro.historicaltour.Classes.classes.timeClass;
+import com.example.micro.historicaltour.JsonClasses.PlacesAsyncTask;
 
 import java.io.ByteArrayOutputStream;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class PlacesListActivity extends AppCompatActivity {
+public class PlacesListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<placeClass>> {
 
     governorateClass governorate;
+    String placesUrl;
+    ListView listView;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -36,6 +36,9 @@ public class PlacesListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         governorate = intent.getParcelableExtra("places");
+
+        placesUrl="http://historictour.somee.com/main/GetPlaces/1";
+
 
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test);
@@ -50,46 +53,25 @@ public class PlacesListActivity extends AppCompatActivity {
 
         ArrayList<placeClass> places = governorate.getPlaceClasses();
 
-        ArrayList<timeClass> WorkingDays = new ArrayList<>();
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(new timeClass(10,22));
-        WorkingDays.add(null);
-
-        UserClass user = new UserClass();
-        user.setID(1);
-        user.setName("Yasser Mohamed");
-        user.setUserName("Yasser ELNagar");
-
-        Date date = new Date();
+        listView = findViewById(R.id.placesListview);
 
 
-        ArrayList<reviewClass> reviews = new ArrayList<>();
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
-        reviews.add(new reviewClass(user,(float) 4.5,"This Place Is an Amazing Place ,I will Visit it again for sure", date));
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
 
-        places.add(new placeClass(1,"Cairo Museum",4.9,"wjWzj3gq1qk",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"wjWzj3gq1qk",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"wjWzj3gq1qk",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"wjWzj3gq1qk",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"9NTnSCiu1HQ",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"9NTnSCiu1HQ",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
-        places.add(new placeClass(1,"Cairo Museum",4.9,"9NTnSCiu1HQ",Images,"here is some description about the museum","Cairo",(float) 77.037692,(float)38.898648,WorkingDays,reviews));
+        NetworkInfo networkInfo =manager.getActiveNetworkInfo();
 
-        ListView listView = findViewById(R.id.placesListview);
+        if(networkInfo!=null && networkInfo.isConnected()){
+
+            LoaderManager loaderManager = getLoaderManager();
+
+            loaderManager.initLoader(1,null,this);
+
+        }
+        else {
+
+        }
 
 
-        placeListviewAdapter adapter = new placeListviewAdapter(PlacesListActivity.this,places);
-
-        listView.setAdapter(adapter);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -101,6 +83,27 @@ public class PlacesListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    public Loader<ArrayList<placeClass>> onCreateLoader(int id, Bundle args) {
+        return new PlacesAsyncTask(this,placesUrl);
+    }
+
+
+
+    @Override
+    public void onLoadFinished(Loader<ArrayList<placeClass>> loader, ArrayList<placeClass> data) {
+
+        governorate.setPlaceClasses(data);
+        placeListviewAdapter adapter = new placeListviewAdapter(PlacesListActivity.this,data);
+
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<ArrayList<placeClass>> loader) {
 
     }
 }

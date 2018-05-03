@@ -1,8 +1,6 @@
 package com.example.micro.historicaltour;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.micro.historicaltour.Classes.classes.placeClass;
 
-import java.io.ByteArrayInputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +22,7 @@ public class placeListviewAdapter extends ArrayAdapter {
 
     ArrayList<placeClass> Places;
 
-    public placeListviewAdapter(@NonNull Context context,ArrayList<placeClass> places) {
+    public placeListviewAdapter(@NonNull Context context, ArrayList<placeClass> places) {
         super(context, 0);
         Places=places;
     }
@@ -62,18 +60,28 @@ public class placeListviewAdapter extends ArrayAdapter {
             viewholder= (placeViewholder) view.getTag();
         }
 
-        viewholder.rate.setText((String.valueOf(currentPlace.getRate())));
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        String output = formatter.format(currentPlace.getRate());
+
+        viewholder.rate.setText(output);
         viewholder.name.setText((String.valueOf(currentPlace.getName())));
         viewholder.location.setText((String.valueOf(currentPlace.getLocation())));
         viewholder.description.setText((String.valueOf(currentPlace.getDescrption())));
 
         // display the first image of the place from db
-        byte[] imageArray =currentPlace.getImages().get(0);
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(imageArray);
-        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+//        if(currentPlace.getImages().get(0)!=null){
+//
+//            byte[] imageArray =currentPlace.getImages().get(0);
+//            ByteArrayInputStream inputStream = new ByteArrayInputStream(imageArray);
+//            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+//
+//
+//            viewholder.image.setImageBitmap(bitmap);
+//        }
+
+        viewholder.image.setImageResource(R.drawable.mus);
 
 
-        viewholder.image.setImageBitmap(bitmap);
 
 
         return view;

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Historic Tour.iml" filepath="$PROJECT_DIR$/Historic Tour.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/historicl_t.iml" filepath="$PROJECT_DIR$/historicl_t.iml" />
     </modules>
   </component>
 </project>

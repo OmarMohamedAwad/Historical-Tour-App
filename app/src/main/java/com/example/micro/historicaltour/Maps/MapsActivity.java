@@ -7,16 +7,16 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.micro.historicaltour.R;
@@ -41,9 +41,8 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener,
-        GoogleMap.OnMarkerClickListener,
-        GoogleMap.OnMarkerDragListener
+        LocationListener
+
 {
 
     private GoogleMap mMap;
@@ -54,8 +53,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     int PROXIMITY_RADIUS = 10000;
     double latitude, longitude;
     double end_latitude, end_longitude;
-
-
 
 
     @Override
@@ -81,7 +78,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         // dialog end
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
 
@@ -99,6 +96,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        Animation animation = new TranslateAnimation(0, 500,0, 0);
+        animation.setDuration(4000);
+        animation.setFillAfter(true);
+        Button bt =(Button)findViewById(R.id.b_resturants);
+       // bt.startAnimation(animation);
 
     }
 
@@ -130,7 +132,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         //Initialize Google Play Services
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
@@ -142,8 +144,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-        mMap.setOnMarkerDragListener(this);
-        mMap.setOnMarkerClickListener(this);
+   //     mMap.setOnMarkerDragListener(this);
+   //     mMap.setOnMarkerClickListener(this);
 
     }
 
@@ -263,7 +265,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private String getUrl(double latitude, double longitude, String nearbyPlace)
     {
-        StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/placeClass/nearbysearch/json?");
+        StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlacesUrl.append("location=" + latitude + "," + longitude);
         googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
         googlePlacesUrl.append("&type=" + nearbyPlace);
@@ -405,7 +407,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    @Override
+   /* @Override
     public boolean onMarkerClick(Marker marker) {
         marker.setDraggable(true);
         return false;
@@ -428,7 +430,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Log.d("end_lat",""+end_latitude);
         Log.d("end_lng",""+end_longitude);
-    }
+    }*/
 }
 
 

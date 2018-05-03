@@ -23,6 +23,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal"
         android:weightSum="2">
 
@@ -31,19 +33,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:weightSum="4"
             android:gravity="center"
             android:orientation="vertical">
 
-            <Button
+            <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="50dp"
+                android:layout_weight="3"
                 android:layout_height="50dp"
-                android:background="@drawable/marker" />
+                android:background="@drawable/students" />
 
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Set Your Directions "
+                android:text="Nearby schools "
+                android:layout_weight="1"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center" />
 
@@ -53,24 +58,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
+android:weightSum="4"
             android:gravity="center"
             android:orientation="vertical">
 
 
-            <Button
+            <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
 
-                android:layout_weight="1"
+                android:layout_weight="3"
 
                 android:background="@drawable/to_destination" />
 
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text=" Set Marker in your Location"
+                android:layout_weight="1"
+                android:text=" Set your Location"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center" />
 
@@ -79,32 +85,6 @@
 
     </LinearLayout>
 
-    <!--location marker end-->
-
-
-    <!---schools start-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/imageView6"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/students" />
-
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Nearby schools"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center" />
-    </LinearLayout>
-    <!---schools end -->
 
 
     <!--location marker start-->
@@ -121,20 +101,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-
+android:weightSum="4"
             android:orientation="vertical">
 
-            <Button
+            <ImageView
                 android:id="@+id/ww"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/hospitals" />
+                android:layout_weight="3"
+                android:src="@drawable/hospitals"
+               />
 
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Nearby Hosbitals "
-                android:layout_marginTop="10dp"
                 android:textAlignment="center" />
 
         </LinearLayout>
@@ -168,11 +150,12 @@
 
     <Button
         android:id="@+id/dismiss"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center"
         android:text="Dismiss"
-        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+
         android:background="@drawable/dark_border"/>
     <!--location marker end-->
 

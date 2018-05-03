@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.micro.historicaltour.MyTour.MyTourCardActivity;
+import com.example.micro.historicaltour.MyTour.SelectedHotelsListActivity;
 import com.example.micro.historicaltour.ToueGuides.TourGuidesActivity;
 import com.example.micro.historicaltour.hotels.HotelsListActivity;
 
@@ -14,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     CardView Tourguide_card;
     CardView media_card;
     CardView my_hotel_card;
+    CardView my_tour_card;
 
     ImageView places_card_imageview;
     ImageView tourguide_card_imageview;
@@ -35,6 +39,8 @@ public class HomeActivity extends AppCompatActivity {
 
         places_card = (CardView) findViewById(R.id.places_card);
         my_hotel_card = (CardView) findViewById(R.id.my_hotel_card);
+        my_tour_card = (CardView) findViewById(R.id.my_tour_card);
+
         places_card_imageview = (ImageView) findViewById(R.id.places_card_imageview);
         media_card = (CardView) findViewById(R.id.media_card);
         Tourguide_card = (CardView) findViewById(R.id.tour_guides_card);
@@ -51,6 +57,16 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, HotelsListActivity.class);
                startActivity(i);
+            }
+        });
+
+
+
+        my_tour_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, MyTourCardActivity.class);
+                startActivity(i);
             }
         });
 
